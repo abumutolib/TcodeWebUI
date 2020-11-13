@@ -1,0 +1,21 @@
+﻿@mixin mquerymax($arg) {
+    @media (max-width: $arg) {
+        @content;
+    }
+}
+
+@mixin mquerymin($arg) {
+    @media (min-width: $arg) {
+        @content;
+    }
+}
+
+@mixin mqueryminmax($max, $min) {
+    @media (max-width: $max) and (min-width: $min) {
+        @content;
+    }
+}
+
+@mixin paddings($args...) {
+    padding: $args;
+}

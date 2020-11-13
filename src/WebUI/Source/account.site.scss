@@ -1,0 +1,328 @@
+﻿@import "scss/media-query";
+@import "pages/account/account.page.scss";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url(assets/account-background.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    ul {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+section.desktop {
+    display: flex;
+/*    justify-content: space-between;*/
+    width: calc(100% - 400px);
+    max-width: 1200px;
+    height: calc(100% - 150px);
+    padding: 1.5rem 0 2.25rem 0;
+    background: $box-container-color;
+    position: relative;
+    nav.navigation{
+        display: inherit;
+        position: absolute;
+        right: 50px;
+        ul{
+            display: inherit;
+            li{
+                padding: 0 .5rem;
+                a{
+                    color: $main-color;
+                    font-weight: bold;
+                    font-size: 16px;
+                    text-transform: uppercase;
+                    transition: color .2s ease;
+                    &:hover{
+                        color: darken($main-color, 15);
+                    }
+                }
+            }
+        }
+    }
+
+    .left-arts {
+        display: flex;
+        width: 55%;
+        //height: 100%;
+
+        svg {
+            width: 100%;
+        }
+
+        .cls-1 {
+            isolation: isolate;
+        }
+
+        .cls-13, .cls-2, .cls-24 {
+            mix-blend-mode: multiply;
+        }
+
+        .cls-3 {
+            fill: url(#linear-gradient);
+        }
+
+        .cls-4 {
+            fill: url(#linear-gradient-2);
+        }
+
+        .cls-5 {
+            fill: #29a9e0;
+        }
+
+        .cls-6 {
+            fill: url(#linear-gradient-3);
+        }
+
+        .cls-19, .cls-24, .cls-7 {
+            fill: #4d8593;
+        }
+
+        .cls-8 {
+            fill: url(#linear-gradient-4);
+        }
+
+        .cls-9 {
+            fill: url(#linear-gradient-5);
+        }
+
+        .cls-10 {
+            fill: url(#linear-gradient-6);
+        }
+
+        .cls-11 {
+            fill: url(#linear-gradient-7);
+        }
+
+        .cls-12 {
+            fill: url(#linear-gradient-8);
+        }
+
+        .cls-13 {
+            fill: #f2f2f2;
+        }
+
+        .cls-14 {
+            fill: url(#linear-gradient-9);
+        }
+
+        .cls-15 {
+            fill: url(#linear-gradient-10);
+        }
+
+        .cls-16 {
+            fill: url(#linear-gradient-11);
+        }
+
+        .cls-17 {
+            fill: url(#linear-gradient-12);
+        }
+
+        .cls-18 {
+            fill: #001e48;
+        }
+
+        .cls-19 {
+            font-size: 28.94px;
+            font-family: Raleway-Bold, Raleway Bold;
+            font-weight: 700;
+        }
+
+        .cls-20 {
+            letter-spacing: -0.04em;
+        }
+
+        .cls-21 {
+            letter-spacing: -0.02em;
+        }
+
+        .cls-22 {
+            fill: #e26b6d;
+        }
+
+        .cls-23 {
+            fill: #fff;
+        }
+
+        .cls-25 {
+            fill: url(#linear-gradient-13);
+        }
+
+        .cls-26 {
+            fill: url(#linear-gradient-14);
+        }
+
+        .cls-27 {
+            fill: #f1cbb3;
+        }
+
+        .cls-28 {
+            fill: #e29f77;
+        }
+
+        .cls-29 {
+            fill: #eaab3b;
+        }
+
+        .cls-30 {
+            fill: #253770;
+        }
+
+        .cls-31 {
+            fill: url(#linear-gradient-15);
+        }
+
+        .cls-32 {
+            fill: url(#linear-gradient-16);
+        }
+
+        .cls-33 {
+            fill: url(#linear-gradient-17);
+        }
+
+        .cls-34 {
+            fill: url(#linear-gradient-18);
+        }
+
+        .cls-35 {
+            fill: #a7adc0;
+        }
+
+        .cls-36 {
+            fill: url(#linear-gradient-19);
+        }
+
+        .cls-37 {
+            fill: url(#linear-gradient-20);
+        }
+
+        .cls-38 {
+            fill: url(#linear-gradient-21);
+        }
+
+        .cls-39 {
+            fill: #edc2a9;
+        }
+
+        .cls-40 {
+            fill: #dbbdaf;
+        }
+
+        .cls-41 {
+            fill: url(#linear-gradient-22);
+        }
+
+        .cls-42 {
+            fill: url(#linear-gradient-23);
+        }
+
+        .cls-43 {
+            fill: #5da1f0;
+        }
+
+        .cls-44 {
+            fill: url(#linear-gradient-24);
+        }
+
+        .cls-45 {
+            fill: url(#linear-gradient-25);
+        }
+
+        .cls-46 {
+            fill: url(#linear-gradient-26);
+        }
+
+        .cls-47 {
+            fill: url(#linear-gradient-27);
+        }
+
+        .cls-48 {
+            fill: url(#linear-gradient-28);
+        }
+
+        .cls-49 {
+            fill: url(#linear-gradient-29);
+        }
+
+        .cls-50 {
+            fill: url(#linear-gradient-30);
+        }
+
+        .cls-51 {
+            fill: url(#linear-gradient-31);
+        }
+
+        .cls-52 {
+            fill: url(#linear-gradient-32);
+        }
+
+        .cls-53 {
+            fill: url(#linear-gradient-33);
+        }
+
+        .cls-54 {
+            fill: url(#linear-gradient-34);
+        }
+
+        .cls-55 {
+            fill: url(#linear-gradient-35);
+        }
+
+        .cls-56 {
+            fill: url(#linear-gradient-36);
+        }
+
+        .cls-57 {
+            fill: url(#linear-gradient-37);
+        }
+
+        .cls-58 {
+            fill: url(#linear-gradient-38);
+        }
+
+        .cls-59 {
+            fill: url(#linear-gradient-39);
+        }
+    }
+
+    section.render-section{
+        display: inherit;
+        width: 45%;
+        justify-content: center;
+        align-self: center;
+    }
+
+    @include mquerymax(1100px){
+        flex-direction: column;
+        align-items: center;
+        width: auto;
+        height: auto;
+        nav.navigation{
+            position: static;
+        }
+        .left-arts{
+            display: none;
+
+        }
+        section.render-section{
+            width: 100%;
+            margin: 1.5rem 0;
+        }
+    }
+}

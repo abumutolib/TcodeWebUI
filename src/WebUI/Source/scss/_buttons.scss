@@ -1,0 +1,37 @@
+.t-btn{
+    display: block;
+    padding: 15px 25px;
+    position: relative;
+    overflow: hidden;
+    &::after{
+        position: absolute;
+        content: '';
+        right: 100%;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        transition: all 0.5s ease;
+    }
+    &:hover{
+        &::after{
+            right: 0;
+        }
+    }
+    span{
+        position: relative;
+        display:inline-block;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        z-index: 10;
+    }
+}
+
+.t-btn-green{
+    background: #86BC42;
+    &::after{
+        background-color: #242c42;
+    }
+    span{
+        color: #fff;
+    }
+}

@@ -1,0 +1,14 @@
+@import "../../scss/general-style";
+@import "header-nav/header.component.scss";
+@import "main-container/main-container.component.scss";
+@import "footer/footer.component.scss";
+
+.logo {
+    padding-right: 20px;
+    }
+
+    @include mquerymax(1000px) {
+        article.main-content {
+            width: calc(100% - 100px) !important;
+        }
+    }

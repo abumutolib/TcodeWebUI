@@ -1,0 +1,145 @@
+@import "../../scss/colorvariable";
+@import "../../scss/general-style";
+@import "header/header.component.scss";
+@import "footer/footer.component.scss";
+@import "aside/aside.component.scss";
+@import "main-content/main-content.component.scss";
+
+
+.logo {
+    margin-left: 30px;
+    flex-grow: 1;
+}
+
+    button.btn-hamburger {
+        display: none;
+        width: 33px;
+        height: 32px;
+        position: relative;
+        top: calc(50% - 16px);
+        left: 30px;
+        cursor: pointer;
+        background: transparent;
+        outline: none;
+        border: none;
+
+        &.active {
+            ~ .menu-icon {
+                background-color: transparent;
+
+                &::after {
+                    top: 0;
+                    transform: rotate(-45deg);
+                }
+
+                &:before {
+                    top: 0;
+                    transform: rotate(45deg);
+                }
+            }
+        }
+
+        .menu-icon {
+            border-radius: 1px;
+            height: 4px;
+            width: 33px;
+            background: #fff; //$base-background;
+            position: relative;
+            display: block;
+            transition: all 0.2s ease-in-out;
+
+            &::before {
+                position: absolute;
+                background: #fff;
+                display: block;
+                content: "";
+                width: 100%;
+                height: 4px;
+                top: -8px;
+                transition: all 0.3s ease-in-out;
+            }
+
+            &::after {
+                position: absolute;
+                background: #fff;
+                display: block;
+                content: "";
+                width: 100%;
+                height: 4px;
+                top: 8px;
+                transition: all 0.3s ease-in-out;
+            }
+        }
+    }
+
+    button.btn-hamburger-close {
+        .menu-icon {
+            background-color: transparent;
+
+            &::after {
+                top: 0;
+                transform: rotate(-45deg);
+                background: #000;
+            }
+
+            &::before {
+                background: #000;
+                top: 0;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    @include mquerymax(833px) {
+        nav.nav {
+            ul {
+                padding-left: 40px;
+            }
+        }
+
+        .btn-hamburger {
+            display: block !important;
+        }
+
+        aside.side-bar {
+            position: fixed !important;
+            left: -300px;
+            top: 0 !important;
+
+            .mobailsection {
+                display: flex !important;
+            }
+        }
+    }
+
+#spinner:not([hidden]) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#spinner::after {
+    content: "";
+    width: 80px;
+    height: 80px;
+    border: 2px solid #f3f3f3;
+    border-top: 3px solid #f25a41;
+    border-radius: 100%;
+    will-change: transform;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

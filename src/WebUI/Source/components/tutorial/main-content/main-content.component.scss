@@ -1,0 +1,17 @@
+@import "../../../scss/media-query";
+
+main.main-container {
+    display: flex;
+    width: 100%;
+
+    section.main-section {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        flex-grow: 1;
+        article {
+            font-size: 25px;
+            margin: 20px;
+        }
+    }
+}

@@ -1,0 +1,90 @@
+﻿@import "../../../scss/buttons";
+@import "../../../scss/media-query";
+
+section.card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: calc(calc(100% / 4) - 30px);
+    min-width: 210px;
+    background: darken($white-color, 2);
+    margin: 15px 15px;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.2);
+    transition: all 0.5s ease;
+
+    .card-header {
+        img {
+            width: 100%;
+        }
+    }
+
+    .card-content {
+        display: inherit;
+        flex-direction: column;
+        padding: 10px;
+
+        .card-content-header {
+            font-weight: 500;
+            font-size: 18px;
+            padding: 10px 0;
+        }
+
+        .card-content-text {
+            font-weight: 400;
+            font-size: 14px;
+            text-align: left;
+            line-height: 1.4;
+        }
+    }
+
+    .card-footer {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    &::after {
+        position: absolute;
+        z-index: 2;
+        content: '';
+        height: 5px;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        background-color: $main-color;
+        transition: all 0.5s ease;
+    }
+
+    &::before {
+        position: absolute;
+        z-index: 2;
+        content: '';
+        height: 5px;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        background-color: darken($white-color, 10);
+    }
+
+    &:hover {
+        background: $white-color;
+        box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.3);
+
+        &::after {
+            width: 100%;
+        }
+    }
+
+    @include mquerymax(1176px) {
+        width: calc(calc(100% / 3) - 30px);
+    }
+
+    @include mquerymax(936px) {
+        width: calc(calc(100% / 2) - 30px);
+    }
+
+    @include mquerymax(696px) {
+        width: calc(100% - 30px);
+    }
+}
