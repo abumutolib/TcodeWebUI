@@ -4,7 +4,6 @@ using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 using Application.Common.Mappings;
 using Application.Common.Behaviours;
-using Application.Common.Interfaces;
 
 namespace Application
 {
@@ -12,11 +11,11 @@ namespace Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
+            services.AddScoped<HelperMappingProfile2>();
             var serviceProvider = services.BuildServiceProvider();
-            var pathProvider = serviceProvider.GetService<IPathProvider>();
-            var mappingProfile = new HelperMappingProfile2(pathProvider).MappingProfile;
-
+            var mappingProfile = serviceProvider.GetService<HelperMappingProfile2>().MappingProfile;
             services.AddAutoMapper(x => x.AddProfile(mappingProfile), Assembly.GetExecutingAssembly());
+
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestPerformanceBehaviour<,>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
