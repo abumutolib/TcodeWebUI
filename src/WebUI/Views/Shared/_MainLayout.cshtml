@@ -1,0 +1,124 @@
+﻿@{
+    var title = ViewData["Title"].Equals("TCODE.TJ") ? "TCODE.TJ" : $"{ViewData["Title"]} - TCODE.TJ";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="~/favicon.svg" />
+    <title>
+        @title
+    </title>
+    <environment include="Development">
+        <link href="~/css/main.bundle.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/main.bundle.min.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+    @RenderSection("Styles", required: false)
+</head>
+<body class="scrollbar">
+    <header class="header">
+        <nav class="nav">
+            <button id="toggleCheckbox">
+                <span class="menu-icon"></span>
+            </button>
+            <div class="nav-container">
+                <div class="logo">
+                    <a href="/"> <span>T</span><span>code</span> </a>
+                </div>
+
+                @await Component.InvokeAsync("Navigation")
+
+                <div class="search-form">
+                    <form action="#">
+                        <input type="text" placeholder="Search" />
+                        <button type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <partial name="Partials/_LoginPartial" />
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-container">
+        @RenderBody()
+    </main>
+
+    <footer class="footer">
+        <section class="footer-row-1">
+            <div class="footer-col-1">
+                <span class="header">TCODING.TJ</span>
+                <div class="footer-info">
+                    <span>
+                        TutorialsTeacher.com is optimized for learning web technologies step by step.
+                        Examples might be simplified to improve reading and basic understanding.
+                        While using this site, you agree to have read and accepted our terms of use and privacy policy.
+                    </span>
+                </div>
+            </div>
+            <div class="footer-col-2">
+                <span class="header">TUTORIALS</span>
+                <div class="footer-tutorials">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> ASP.NET Core</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> ASP.NET MVC</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> IoC</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Web API</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> C#</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> LINQ</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Entity Framework</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> AngularJS 1</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Node.js</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> D3.js</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> JavaScript</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> jQuery</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Sass</a></li>
+                        <li><a href="#"><i class="fas fa-angle-right"></i> Https</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-col-3">
+                <span class="header">E-MAIL LIST</span>
+                <div class="email">
+                    <span class="text">
+                        Subscribe to TutorialsTeacher email list and get latest updates, tips & tricks on C#, .Net,
+                        JavaScript, jQuery, AngularJS, Node.js to your inbox.
+                    </span>
+                    <div class="subscribe">
+                        <form action="/">
+                            <input type="email" placeholder="Email" />
+                            <input type="submit" class="btn btn-submit" value="GO" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="footer-row-2">
+            <ul>
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">PRIVACY POLICY</a></li>
+                <li><a href="#">TERMS OF USE</a></li>
+                <li><a href="#">ADVERTISE WITH US</a></li>
+            </ul>
+            <span>
+                &copy; 2020 Tcoding.tj. All Rights Reserved.
+            </span>
+        </section>
+    </footer>
+
+    <environment include="Development">
+        <script src="~/js/common.bundle.js"></script>
+        <script src="~/js/main.bundle.js"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/common.bundle.min.js" asp-append-version="true"></script>
+        <script src="~/js/main.bundle.min.js" asp-append-version="true"></script>
+    </environment>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

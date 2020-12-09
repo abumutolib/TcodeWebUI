@@ -1,0 +1,13 @@
+﻿@model ViewComponentTutorialsVm
+
+<span class="aside-title">@Model.Title Tutorials</span>
+<ul>
+    @foreach (var t in Model.List)
+    {
+        <li>
+            <a asp-action="DetailTutorial" asp-controller="Tutorial" asp-route-id="@t.Id" property="tutorial-link">
+                @t.Title
+            </a>
+        </li>
+    }
+</ul>

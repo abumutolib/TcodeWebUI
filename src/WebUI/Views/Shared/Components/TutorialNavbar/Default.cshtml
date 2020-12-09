@@ -1,0 +1,10 @@
+﻿@model ViewComponentLanguageToolVm
+
+    <ul id="tutorial-aside-list">
+        @foreach (var tool in Model.List)
+        {
+            <li>
+                <a asp-route-techId="@tool.TechId" asp-route-toolId="@tool.Id" asp-action="Details" asp-controller="Tutorial">@tool.Title</a>
+            </li>
+        }
+    </ul>

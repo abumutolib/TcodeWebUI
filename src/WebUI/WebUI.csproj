@@ -2,7 +2,27 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Views\Shared\Components\Navigation\**" />
+    <Compile Remove="Views\Shared\Components\Pager\**" />
+    <Compile Remove="Views\Shared\Components\TutorialAside\**" />
+    <Compile Remove="Views\Shared\Components\TutorialNavbar\**" />
+    <Content Remove="Views\Shared\Components\Navigation\**" />
+    <Content Remove="Views\Shared\Components\Pager\**" />
+    <Content Remove="Views\Shared\Components\TutorialAside\**" />
+    <Content Remove="Views\Shared\Components\TutorialNavbar\**" />
+    <EmbeddedResource Remove="Views\Shared\Components\Navigation\**" />
+    <EmbeddedResource Remove="Views\Shared\Components\Pager\**" />
+    <EmbeddedResource Remove="Views\Shared\Components\TutorialAside\**" />
+    <EmbeddedResource Remove="Views\Shared\Components\TutorialNavbar\**" />
+    <None Remove="Views\Shared\Components\Navigation\**" />
+    <None Remove="Views\Shared\Components\Pager\**" />
+    <None Remove="Views\Shared\Components\TutorialAside\**" />
+    <None Remove="Views\Shared\Components\TutorialNavbar\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MediatR" Version="9.0.0" />

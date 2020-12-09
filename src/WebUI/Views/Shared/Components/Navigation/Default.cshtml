@@ -1,0 +1,36 @@
+﻿@model TechnologyVm
+@*@{
+        const string cssLinkAnchor = "link-anchor";
+        const string cssLinkText = "link-text";
+        var linkIcon = new Func<string, string>((icon) => $"<i class = \"fas fa-{icon}\"></i>");
+        var linkText = new Func<string, string, string>((text, icon) => $"<div class=\"{cssLinkText}\">{icon}<span>{text}</span></div>");
+        var Anchor = new Func<string, string, string>((href, block) => $"<a href=\"{href}\" class=\"{cssLinkAnchor}\">{block}</a>");
+        var Li = new Func<string, string>((block) => $"<li class=\"link\">{block}</li>");
+
+    }*@
+
+<ul class="nav-items">
+    <li class="dropdown">
+        <a href="#" class="dropdown-link">Tutorials<span class="arrow-icon"></span></a>
+        <div class="dropdown-container">
+            <div class="title">
+                <p>Programming & Electronic tutorials |</p>
+            </div>
+            <ul class="dropdown-items">
+                <li class="dropdown-title">Programming & Electronic tutorials</li>
+                @foreach (var link in Model.List)
+                {
+                    <li>
+                        <a asp-action="Details" asp-controller="Tutorial" asp-route-techId="@link.Id">@link.Title</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </li>
+    <li>
+        <a asp-action="List" asp-controller="Article">Articles</a>
+    </li>
+    <li>
+        <a href="#">Projects</a>
+    </li>
+</ul>

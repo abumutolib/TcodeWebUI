@@ -5,6 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Application;
 using Infrastructure;
+using Application.Common.Interfaces;
+using WebUI.Services;
 
 namespace WebUI
 {
@@ -20,8 +22,11 @@ namespace WebUI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddApplication();
-            services.AddInfrastructure();
+
+            services.AddScoped<IPathProvider, PathProvider>();
+
+            //services.AddApplication();
+            //services.AddInfrastructure();
             services.AddControllersWithViews();
         }
 
