@@ -17,9 +17,9 @@ namespace Application.LanguageTools.Queries
 
     internal class SelectedLangToolQueryHanler : IRequestHandler<SelectedLangToolQuery, SelectedLangToolDto>
     {
-        private readonly IApplicationDbContext _context;
+        private readonly IAppDbContext _context;
 
-        public SelectedLangToolQueryHanler(IApplicationDbContext context)
+        public SelectedLangToolQueryHanler(IAppDbContext context)
         {
             _context = context;
         }

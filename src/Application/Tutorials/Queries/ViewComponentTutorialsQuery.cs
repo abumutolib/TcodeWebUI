@@ -19,10 +19,10 @@ namespace Application.Tutorials.Queries
 
     public class ViewComponentTutorialsQueryHadler : IRequestHandler<ViewComponentTutorialsQuery, ViewComponentTutorialsVm>
     {
-        private readonly IApplicationDbContext _context;
+        private readonly IAppDbContext _context;
         private readonly IMapper _mapper;
 
-        public ViewComponentTutorialsQueryHadler(IApplicationDbContext context, IMapper mapper)
+        public ViewComponentTutorialsQueryHadler(IAppDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

@@ -1,0 +1,58 @@
+﻿@model LoginVm
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+@section Styles{
+    <style>
+        input.star-cont {
+            min-width: 300px;
+        }
+    </style>
+}
+
+<form id="sugnup" method="post" asp-action="Login" asp-controller="Account" class="star-form">
+    <div class="star-body">
+        <div class="star-form-header">
+            <div class="header-text">
+                <h2>Sign In</h2>
+            </div>
+        </div>
+        <div asp-validation-summary="All" class="global-error"></div>
+        <div class="star-row">
+            <div class="star-col">
+                <div class="star-form-control">
+                    <label asp-for="Email" class="star-lbl"></label>
+                    <input asp-for="Email" class="star-cont" />
+                    <span asp-validation-for="Email" class="star-validate"></span>
+                </div>
+            </div>
+        </div>
+        <div class="star-row">
+            <div class="star-col">
+                <div class="star-form-control">
+                    <label asp-for="Password" class="star-lbl"></label>
+                    <input asp-for="Password" class="star-cont" />
+                    <span asp-validation-for="Password" class="star-validate"></span>
+                </div>
+            </div>
+        </div>
+        <div class="star-row">
+            <div class="star-col">
+                <div class="control-checkbox">
+                    <input asp-for="RememberMe" type="checkbox" />
+                    <label asp-for="RememberMe"></label>
+                </div>
+            </div>
+        </div>
+        <div class="star-row">
+            <div class="star-col justify-content-center">
+                <button type="submit">Sign In</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+

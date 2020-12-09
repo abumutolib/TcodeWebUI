@@ -5,7 +5,7 @@ using Domain.Entities;
 
 namespace Application.Common.Interfaces
 {
-    public interface IApplicationDbContext
+    public interface IAppDbContext
     {
         DbSet<Tutorial> Tutorials { get; set; }
         DbSet<Technology> Technologies { get; set; }

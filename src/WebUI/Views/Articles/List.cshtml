@@ -1,0 +1,53 @@
+﻿@model PagedResult<ArticleListDto>
+
+@{
+    ViewData["Title"] = "List";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<section class="filter">
+</section>
+
+<section class="articles-container">
+    @foreach (var item in Model.Items)
+    {
+        <article class="article">
+            <div class="article-content">
+                <img src="~/img/csharp.jpg" alt="Title" srcset="" />
+                <section class="content">
+                    <div class="title">
+                        <a asp-route-id="@item.Id" asp-action="Details" asp-controller="Article">
+                            @item.Title
+                        </a>
+                    </div>
+                    <div class="article-created">
+                        <span class="created-at">
+                            @item.PublishDate.ToString("dd MMMM yyyy")
+                        </span>
+                        <span class="created-by">
+                            @item.Author
+                        </span>
+                        <a href="#" class="commets-count"> <i class="fas fa-comment"></i> 4</a>
+                    </div>
+                    <div class="description">
+                        How to use web.config customErrors in ASP.NET MVC description
+                        How to use web.config customErrors in ASP.NET MVC description
+                        How to use web.config customErrors in ASP.NET MVC description
+                        How to use web.config customErrors in ASP.NET MVC description
+                        How to use web.config customErrorss sasasss
+                    </div>
+                </section>
+            </div>
+            <a asp-route-id="@item.Id" asp-action="Details" asp-controller="Article" class="article-read-more">
+                Read more <span>→</span>
+            </a>
+        </article>
+    }
+</section>
+
+<section class="pagination">
+    @if (Model.PageSize < Model.RowCount)
+    {
+        @(await Component.InvokeAsync<Pagination>(Model))
+    }
+</section>

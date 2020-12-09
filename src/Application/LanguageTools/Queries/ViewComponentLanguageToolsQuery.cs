@@ -19,10 +19,10 @@ namespace Application.LanguageTools.Queries
 
     public class ViewComponentLanguageToolsQueryHandler : IRequestHandler<ViewComponentLanguageToolsQuery, ViewComponentLanguageToolVm>
     {
-        private readonly IApplicationDbContext _context;
+        private readonly IAppDbContext _context;
         private readonly IMapper _mapper;
 
-        public ViewComponentLanguageToolsQueryHandler(IApplicationDbContext context, IMapper mapper)
+        public ViewComponentLanguageToolsQueryHandler(IAppDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;
