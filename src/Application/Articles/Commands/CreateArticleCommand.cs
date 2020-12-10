@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Domain.Entities;
 using Application.Common.Interfaces;
+using System.Collections.Generic;
 
 namespace Application.Articles.Commands
 {
@@ -11,6 +12,7 @@ namespace Application.Articles.Commands
         public int Id { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
+        public IList<(string name, string path)> Images { get; set; }
         public string ImagePath { get; set; }
         public string ImageName { get; set; }
     }
@@ -25,18 +27,25 @@ namespace Application.Articles.Commands
 
         public async Task<int> Handle(CreateArticleCommand request, CancellationToken cancellationToken)
         {
-            var img = new ArticleImage
+            List<ArticleImage> images = new();
+
+            foreach(var img in request.Images)
             {
-                Name = request.ImageName,
-                Path = request.ImagePath
-            };
+                images.Add(new ArticleImage
+                {
+                    Name = img.name,
+                    Path = img.path
+                });
+            }
+
             var article = new Article
             {
                 Title = request.Title,
                 HtmlContent = request.Content,
                 IsActive = false,
+                Images = images
             };
-            article.Images.Add(img);
+
             _context.Articles.Add(article);
             await _context.SaveChangesAsync(cancellationToken);
 
