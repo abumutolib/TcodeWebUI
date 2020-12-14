@@ -5,11 +5,11 @@ using Application.Tutorials.Queries;
 
 namespace WebUI.ViewComponents
 {
-    public class TutorialAside : ViewComponent
+    public class TutorialAsideViewComponent : ViewComponent
     {
         private readonly IMediator _mediator;
 
-        public TutorialAside(IMediator mediator)
+        public TutorialAsideViewComponent(IMediator mediator)
         {
             _mediator = mediator;
         }

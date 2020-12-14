@@ -92,7 +92,7 @@ namespace WebUI.Controllers
             //model.Scheme.ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new DataUser
+                var user = new AppDataUser
                 {
                     FirstName = model.FirstName,
                     LastName = model.LastName,

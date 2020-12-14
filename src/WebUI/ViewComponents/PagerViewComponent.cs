@@ -4,7 +4,7 @@ using Application.Common.Models;
 
 namespace WebUI.ViewComponents
 {
-    public class Pagination : ViewComponent
+    public class PagerViewComponent : ViewComponent
     {
         public Task<IViewComponentResult> InvokeAsync(PagedResultBase result)
         {

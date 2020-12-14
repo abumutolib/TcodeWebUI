@@ -1,0 +1,43 @@
+﻿@using Infrastructure.Identity
+
+@inject IIdentityService Service
+@{
+    var isSigned = await Service.IsSignedIn(User);
+}
+
+<div class="login-form">
+    @if (isSigned.Signed)
+    {
+        <a id="logged-button" class="logged-button" role="button">
+            <img src="~/img/csharp.jpg" />
+        </a>
+        <div id="logged-options" class="logged-options">
+            <span class="title">
+                <span>Account Information</span>
+            </span>
+            <div class="person-info">
+                <div class="info">
+                    <img src="~/img/csharp.jpg" />
+                    <span>Abu tolib</span>
+                    <span>@isSigned.User.Email</span>
+                </div>
+                <a asp-area="Identity" asp-action="Manage" asp-controller="Account" title="Manage">Manage profile setting</a>
+            </div>
+            <div class="log-out">
+                <form class="logout-form" asp-area="Identity" asp-action="Logout" asp-controller="Account" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                    <button type="submit">Sign out of account</button>
+                </form>
+            </div>
+        </div>
+    }
+    else
+    {
+        <button id="auth-button">
+            <i class="fas fa-user"></i>
+        </button>
+        <div id="auth-popup" class="auth-popup">
+            <a asp-action="Login" asp-controller="Account">Sign In</a>
+            <a asp-action="Register" asp-controller="Account">Sign Up</a>
+        </div>
+    }
+</div>

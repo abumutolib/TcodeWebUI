@@ -23,8 +23,8 @@ namespace Infrastructure
         {
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(
-                    configuration.GetConnectionString("DefaultConnection"),
-                    b => b.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName)));
+                    configuration.GetConnectionString("DefaultConnection")));/*,
+                    b => b.MigrationsAssembly(typeof(AppDbContext).Assembly.FullName)));*/
 
             services.AddScoped<IAppDbContext>(provider => provider.GetService<AppDbContext>());
 
@@ -66,8 +66,8 @@ namespace Infrastructure
             }
             else
             {
-                services.AddIdentityServer()
-                    .AddApiAuthorization<AppUser, AppDbContext>();
+                //services.AddIdentityServer();
+                    //.AddApiAuthorization<AppUser, AppDbContext>();
 
                 services.AddTransient<IDateTime, DateTimeService>();
                 services.AddTransient<IIdentityService, IdentityService>();

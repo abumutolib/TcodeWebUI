@@ -118,5 +118,5 @@ module.exports = {
     module: _module,
     optimization: optimization,
     plugins: plugins,
-    watch: true
+    watch: false
 };

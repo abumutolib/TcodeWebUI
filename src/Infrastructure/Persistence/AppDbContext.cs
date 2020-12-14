@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Domain.Common;
 using Domain.Entities;
 using Application.Common.Interfaces;
+using Microsoft.AspNetCore.Identity;
 
 namespace Infrastructure.Persistence
 {
@@ -30,7 +31,7 @@ namespace Infrastructure.Persistence
         public DbSet<Article> Articles { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Tutorial> Tutorials { get; set; }
-        public DbSet<DataUser> DataUsers { get; set; }
+        public DbSet<AppDataUser> AppDataUsers { get; set; }
         public DbSet<Technology> Technologies { get; set; }
         public DbSet<ArticleImage> ArticleImages { get; set; }
         public DbSet<LanguageTool> LanguageTools { get; set; }
@@ -60,7 +61,14 @@ namespace Infrastructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            //builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            //builder.Entity<AppUser>().ToTable("AppUsers");
+            //builder.Entity<AppRole>().ToTable("AppRoles");
+            //builder.Entity<AppUserRole>().ToTable("AppUserRoles");
+            //builder.Entity<AppUserClaim>().ToTable("AppUserClaims");
+            //builder.Entity<AppRoleClaim>().ToTable("AppRoleClaims");
+            //builder.Entity<AppUserLogin>().ToTable("AppUserLogins");
+            //builder.Entity<AppUserToken>().ToTable("AppUserTokens");
 
             base.OnModelCreating(builder);
         }

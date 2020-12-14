@@ -1,4 +1,4 @@
-﻿@*@model SelectedLangToolDto
+﻿@model SelectedLangToolDto
 <!DOCTYPE html>
 
 <html>
@@ -11,19 +11,14 @@
     <environment exclude="Development">
         <link href="~/css/tutorial.bundle.min.css" rel="stylesheet" asp-append-version="true" />
     </environment>
+    @RenderSection("Styles", required: false)
 </head>
 <body class="scrollbar">
     <header class="main-header">
         <div class="logo">
             <a href="/"> <span>T</span><span>code</span> </a>
         </div>
-        <div class="login-form">
-            <button class="auth-button"><i class="fas fa-user"></i></button>
-            <div class="auth-popup">
-                <button>Log In</button>
-                <button>Sign Up</button>
-            </div>
-        </div>
+        <partial name="Partials/_LoginPartial" />
     </header>
     <nav id="main-nav" class="nav">
         <button id="mobile-toggle-open" class="btn-hamburger" type="button">
@@ -145,4 +140,4 @@
     </environment>
     @RenderSection("Scripts", required: false)
 </body>
-</html>*@
+</html>

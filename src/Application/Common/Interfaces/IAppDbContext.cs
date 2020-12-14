@@ -18,7 +18,7 @@ namespace Application.Common.Interfaces
         DbSet<ArticleImage> ArticleImages { get; set; }
         DbSet<Project> Projects { get; set; }
 
-        DbSet<DataUser> DataUsers { get; set; }
+        DbSet<AppDataUser> AppDataUsers { get; set; }
         DbSet<Gender> Genders { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);

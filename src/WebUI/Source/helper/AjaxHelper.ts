@@ -103,7 +103,7 @@
             return initObject;
         }
 
-        private callWebApi(url: string, verb: HttpVerbs, data: T | null, callback: any): void
+        private callWebApi(url: string, verb: HttpVerbs, data: T | null, callback: (object: T) => void): void
         {
             let initObject = this.requestOptions(data, verb);
             fetch(url, initObject)
@@ -111,14 +111,14 @@
                     return response.json();
                 })
                 .then((json) => {
-                    callback(json);
+                    callback(json as T);
                 })
                 .catch((error) => {
                     console.log(error);
                 });
         }
 
-        public getById(id: number, callback: any): void {
+        public getById(id: number, callback: (object: T) => void): void {
             this.callWebApi(`${this.baseUrl}/${id}`, HttpVerbs.GET, null, callback);
         }
 

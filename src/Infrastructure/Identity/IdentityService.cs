@@ -41,7 +41,7 @@ namespace Infrastructure.Identity
             return (result.ToApplicationResult(), user.Id);
         }
 
-        public async Task<(Result Result, string UserId)> CreateUserAsync(DataUser user, string userName, string password)
+        public async Task<(Result Result, string UserId)> CreateUserAsync(AppDataUser user, string userName, string password)
         {
             var appUser = new AppUser
             {

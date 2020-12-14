@@ -38,5 +38,12 @@ namespace WebUI.Controllers
             await Mediator.Send(command);
             return View();
         }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public async Task<IActionResult> Details(int id)
+        {
+            return View(await Mediator.Send(new DetailsArticleQuery { Id = id }));
+        }
     }
 }

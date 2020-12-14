@@ -48,6 +48,6 @@
 <section class="pagination">
     @if (Model.PageSize < Model.RowCount)
     {
-        @(await Component.InvokeAsync<Pagination>(Model))
+        @(await Component.InvokeAsync<PagerViewComponent>(Model))
     }
 </section>

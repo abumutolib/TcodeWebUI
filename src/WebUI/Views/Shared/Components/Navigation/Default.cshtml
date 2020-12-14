@@ -21,14 +21,14 @@
                 @foreach (var link in Model.List)
                 {
                     <li>
-                        <a asp-action="Details" asp-controller="Tutorial" asp-route-techId="@link.Id">@link.Title</a>
+                        <a asp-action="List" asp-controller="Tutorials" asp-route-techId="@link.Id">@link.Title</a>
                     </li>
                 }
             </ul>
         </div>
     </li>
     <li>
-        <a asp-action="List" asp-controller="Article">Articles</a>
+        <a asp-action="List" asp-controller="Articles">Articles</a>
     </li>
     <li>
         <a href="#">Projects</a>

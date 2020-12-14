@@ -5,11 +5,11 @@ using Application.LanguageTools.Queries;
 
 namespace WebUI.ViewComponents
 {
-    public class TutorialNavbar : ViewComponent
+    public class TutorialNavbarViewComponent : ViewComponent
     {
         private readonly IMediator _mediator;
 
-        public TutorialNavbar(IMediator mediator)
+        public TutorialNavbarViewComponent(IMediator mediator)
         {
             _mediator = mediator;
         }

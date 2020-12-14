@@ -31,12 +31,15 @@ namespace Application.Articles.Queries
 
         public async Task<PagedResult<ArticleListDto>> Handle(GetArticlesQuery request, CancellationToken cancellationToken)
         {
+            PagedResult<ArticleListDto> result = new();
             IQueryable<Article> articles = _context.Articles;
+            if (!articles.Any())
+                return result;
 
             if (!string.IsNullOrEmpty(request.Title) && request.Title.Length >= 3)
                 articles = articles.Where(x => x.Title.ToLower().Contains(request.Title.ToLower()));
 
-            PagedResult<ArticleListDto> result = await articles.OrderByDescending(x => x.Created)
+            result = await articles.OrderByDescending(x => x.Created)
                                                                .ProjectTo<ArticleListDto>(_mapper.ConfigurationProvider)
                                                                .GetPagedAsync(request.Page, request.PageSize, cancellationToken);
             return result;

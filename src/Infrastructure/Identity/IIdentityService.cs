@@ -12,7 +12,7 @@ namespace Infrastructure.Identity
         IdentityOptions Options { get; set; }
 
         Task<(Result Result, string UserId)> CreateUserAsync(string userName, string password);
-        Task<(Result Result, string UserId)> CreateUserAsync(DataUser user, string userName, string password);
+        Task<(Result Result, string UserId)> CreateUserAsync(AppDataUser user, string userName, string password);
         Task<Result> DeleteUserAsync(string userId);
         Task<Result> DeleteUserAsync(AppUser user);
         Task<string> GenerateEmailConfirmationTokenAsync(AppUser user);

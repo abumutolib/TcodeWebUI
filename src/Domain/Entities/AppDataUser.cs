@@ -2,7 +2,7 @@
 
 namespace Domain.Entities
 {
-    public class DataUser
+    public class AppDataUser
     {
         public int Id { get; set; }
         public int GenderId { get; set; }

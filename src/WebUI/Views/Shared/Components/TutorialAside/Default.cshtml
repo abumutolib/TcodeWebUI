@@ -5,7 +5,7 @@
     @foreach (var t in Model.List)
     {
         <li>
-            <a asp-action="DetailTutorial" asp-controller="Tutorial" asp-route-id="@t.Id" property="tutorial-link">
+            <a asp-action="Details" asp-controller="Tutorials" asp-route-id="@t.Id" property="tutorial-link">
                 @t.Title
             </a>
         </li>
