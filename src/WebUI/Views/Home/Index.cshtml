@@ -1,8 +1,38 @@
-﻿@{
+﻿@model LanguageToolVm
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<header class="main-header">
+    <div class="main-header-content">
+        <h4>Tcoding.tj</h4>
+        <h1>LEARN WEB TECHNOLOGIES</h1>
+        <h4>Quickly & Easily</h4>
+    </div>
+    <div class="box">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+<article class="main-content">
+    @foreach (var tool in Model.List)
+    {
+        <section class="card">
+            <div class="card-header">
+                <img src="@tool.ImagePath" alt="">
+            </div>
+            <div class="card-content">
+                <span class="card-content-header">@tool.Title</span>
+                <span class="card-content-text">
+                    @tool.Description
+                </span>
+            </div>
+            <div class="card-footer">
+                <a asp-route-techId="@tool.TechId" asp-route-toolId="@tool.Id" asp-action="Details" asp-controller="Tutorial" class="t-btn t-btn-green">
+                    <span>Start learning</span>
+                </a>
+            </div>
+        </section>
+    }
+</article>

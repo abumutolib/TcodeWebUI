@@ -16,7 +16,7 @@
                 <img src="~/img/csharp.jpg" alt="Title" srcset="" />
                 <section class="content">
                     <div class="title">
-                        <a asp-route-id="@item.Id" asp-action="Details" asp-controller="Article">
+                        <a asp-route-id="@item.Id" asp-action="Details" asp-controller="Articles">
                             @item.Title
                         </a>
                     </div>
@@ -38,7 +38,7 @@
                     </div>
                 </section>
             </div>
-            <a asp-route-id="@item.Id" asp-action="Details" asp-controller="Article" class="article-read-more">
+            <a asp-route-id="@item.Id" asp-action="Details" asp-controller="Articles" class="article-read-more">
                 Read more <span>→</span>
             </a>
         </article>

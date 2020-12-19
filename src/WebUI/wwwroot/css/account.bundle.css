@@ -38,8 +38,8 @@
     display: inherit;
     flex-direction: column;
     justify-content: center;
-    padding: .55rem 0;
-    margin: 1.30rem 0;
+    padding: .35rem 0;
+    margin: 1rem 0;
     border: 2px solid #5692a3;
     border-radius: 5px;
     width: 100%;
@@ -64,11 +64,12 @@
     transition: 200ms ease-in;
     line-height: 1;
     cursor: text;
-    transform: translateX(10px); }
+    transform: translateX(10px);
+    font-size: 1rem; }
     .star-form .star-lbl.active {
-      font-size: 16px;
+      font-size: .9rem;
       transition: 200ms ease-in;
-      transform: translate(10px, -25px); }
+      transform: translate(5px, -20px); }
     .star-form .star-lbl.invalid {
       color: #FF3C41; }
   .star-form .star-validate {

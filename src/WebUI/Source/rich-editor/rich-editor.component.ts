@@ -1,8 +1,11 @@
-import Quill, { QuillOptionsStatic } from "quill";
+import Quill, { QuillOptionsStatic } from 'quill';
+import * as  ImageResize from 'quill-image-resize';
+
+Quill.register("modules/imageResize", ImageResize.default);
 
 const container = document.getElementById("editor");
 if (container) {
-    var toolbarOptions = [
+    let toolbarOptions = [
         ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
         ['blockquote', 'code-block'],
       
@@ -21,27 +24,24 @@ if (container) {
         // [{ 'align': []}],
         [{ 'align': ''}, { 'align': 'center'}, { 'align':'right'}, { 'align':'justify'}],
         ['link', 'image'],
-        ['clean']                                         // remove formatting button
+        ['clean'],                                        // remove formatting button
+        ['code']
       ];
-
-
-    let toolbar = [
-        [{'size': ['8px', '10px', '12px', '14px', '16px']}],
-        ['bold', 'italic', 'underline', 'strike'],
-        [{ 'header': '3' }]
-    ];
-
 
     let options: QuillOptionsStatic = {
         modules: {
-            toolbar: toolbarOptions
+            toolbar: toolbarOptions,
+            imageDrop: true,
+            imageResize: {
+                displayStyles: {
+                    backgroundColor: 'black',
+                    border: 'none',
+                    color: 'white'
+                }
+            },
         },
         placeholder: "Enter Text",
         theme: 'snow'  // or 'bubble'
     };
-    // let Size = Quill.import('attributors/style/size');
-    // Size.whitelist = ['8px', '10px', '12px', '14px', '16px', '18px', '32px'];
-    // Quill.register(Size, true);
-
     let editor = new Quill(container, options);
 }

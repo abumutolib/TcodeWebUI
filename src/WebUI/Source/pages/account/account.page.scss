@@ -61,8 +61,8 @@ $error-color: #FF3C41;
         display: inherit;
         flex-direction: column;
         justify-content: center;
-        padding: .55rem 0;
-        margin: 1.30rem 0;
+        padding: .35rem 0;
+        margin: 1rem 0;
         border: 2px solid $main-color;
         border-radius: 5px;
         width: 100%;
@@ -96,12 +96,13 @@ $error-color: #FF3C41;
         line-height: 1;
         cursor: text;
         transform: translateX(10px);
+        font-size: 1rem;
 
         &.active {
             //color: $main-color;
-            font-size: 16px;
+            font-size: .9rem;
             transition: 200ms ease-in;
-            transform: translate(10px, -25px);
+            transform: translate(5px, -20px);
         }
 
         &.invalid{
