@@ -35,8 +35,8 @@ namespace WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(CreateArticleCommand command)
         {
-            await Mediator.Send(command);
-            return View();
+            var result = await Mediator.Send(command);
+            return Json(result);
         }
 
         [HttpGet]

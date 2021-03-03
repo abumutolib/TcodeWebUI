@@ -7,9 +7,21 @@
 
 <div class="quill-wrap">
     <!-- Create the editor container -->
-    <div id="editor">
+    <form asp-action="Create" asp-controller="Articles" method="post">
+        <div class="star-row">
+            <div class="star-col">
+                <div class="star-form-control">
+                    <label asp-for="Title" class="star-lbl">Загаловка</label>
+                    <input asp-for="Title" class="star-cont" />
+                    <span asp-validation-for="Title" class="star-validate"></span>
+                </div>
+            </div>
+        </div>
+        <div id="editor">
 
-    </div>
+        </div>
+        <button type="submit">Save</button>
+    </form>
 </div>
 
 @section Styles {

@@ -1,7 +1,9 @@
 import Quill, { QuillOptionsStatic } from 'quill';
 import * as  ImageResize from 'quill-image-resize';
+import * as ImageCompress from 'quill-image-compress';
 
 Quill.register("modules/imageResize", ImageResize.default);
+Quill.register("modules/imageCompress", ImageCompress.default);
 
 const container = document.getElementById("editor");
 if (container) {
@@ -39,9 +41,21 @@ if (container) {
                     color: 'white'
                 }
             },
+            imageCompress: {
+                quality: 0.5,
+                maxWidth: 1080,
+                maxHeight: 720,
+                imageType: 'image/jpeg', // default
+                debug: false,
+            },
         },
-        placeholder: "Enter Text",
+        placeholder: "Enter your",
         theme: 'snow'  // or 'bubble'
     };
+
     let editor = new Quill(container, options);
+    let toolbar = editor.getModule('toolbar');
+    const btn = document.createElement('button') as HTMLButtonElement;
+    btn.innerText = 'Click';
+    toolbar.appendChild(btn);
 }
